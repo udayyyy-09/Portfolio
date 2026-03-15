@@ -7,17 +7,10 @@ import { Github, Linkedin, Mail, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { socialLinks } from '@/lib/data';
 
-// ─── EmailJS Config ────────────────────────────────────────────────────────────
-// 1. Sign up at https://www.emailjs.com
-// 2. Create a Service (e.g. Gmail) → copy the Service ID
-// 3. Create an Email Template → copy the Template ID
-//    In the template use these variables: {{from_name}}, {{from_email}}, {{message}}
-// 4. Go to Account → API Keys → copy your Public Key
-// Replace the three constants below with your actual values:
-const EMAILJS_SERVICE_ID  = 'service_fir399h';
-const EMAILJS_TEMPLATE_ID = 'template_swg98qr';
-const EMAILJS_PUBLIC_KEY  = 'zSzRBfEINyPrwKKGm';
-// ──────────────────────────────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 
 export function ContactSection() {
   const ref = useRef(null);
